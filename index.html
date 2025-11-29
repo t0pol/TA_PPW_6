@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" data-theme="light">
+    <header class="topbar">
+      <h1>Weather Dashboard</h1>
+      <div class="controls">
+        <div class="search-box">
+          <input id="search" type="search" placeholder="Cari kota (contoh: Bandar Lampung)" autocomplete="off" aria-label="Cari kota">
+          <div id="suggest" class="suggest" role="listbox" aria-label="Saran lokasi"></div>
+        </div>
+        <div class="btns">
+          <button id="btnUnit" aria-pressed="false">°C</button>
+          <button id="btnTheme" aria-pressed="false">🌙</button>
+          <button id="btnRefresh">🔄</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="status" class="status">Pilih lokasi untuk memulai</div>
+
+      <section class="layout">
+        <article class="card current" id="currentCard">
+          <h2 id="loc">—</h2>
+          <div id="currentMain" class="current-main">
+            <div class="loading">Belum ada data</div>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="card">
+            <h3>Favorit</h3>
+            <div id="favorites" class="fav-list"></div>
+          </div>
+
+          <div class="card info">
+            <h3>Kontrol</h3>
+            <div class="small">Pembaruan otomatis: 5 menit</div>
+            <div class="small">Simpan  lokasi dengan tombol Simpan Favorit</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="card forecast-card">
+        <h3>Perkiraan 5 Hari</h3>
+        <div id="forecast" class="forecast-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">Data: OpenWeatherMap. Pastikan API key terpasang di api_weather.php.</footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
